@@ -8,7 +8,8 @@ public static void main(String[] args) {
     // int sum=0;
     // System.out.println(printSum(n,  sum ));
     // System.out.println(printfac(n));
-    System.out.println(power(2, n));
+    // System.out.println(power(2, n));
+    System.out.println(sumDigits(n));
 
 }
 //Q1============================
@@ -49,4 +50,11 @@ public static int power(int i , int j){
         return i;
     }
    return i * power(i,j-1);
+}
+//Q6=================================
+public static int sumDigits(int n){
+    if(n==0){
+        return 0;
+    }
+    return n % 10 + sumDigits(n/10);
 }
