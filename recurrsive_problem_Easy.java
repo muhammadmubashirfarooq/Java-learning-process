@@ -9,9 +9,12 @@ public static void main(String[] args) {
     // System.out.println(printSum(n,  sum ));
     // System.out.println(printfac(n));
     // System.out.println(power(2, n));
-    System.out.println(sumDigits(n));
-
-}
+    // System.out.println(sumDigits(n));
+    //reverseAnum(n);
+    // System.out.println(coutEven(n));
+    ///System.out.println(printFib(n));
+    System.out.println(countDig(n));
+}   
 //Q1============================
 public static int printNum(int a , int b){
     if(a==b){
@@ -58,3 +61,42 @@ public static int sumDigits(int n){
     }
     return n % 10 + sumDigits(n/10);
 }
+//Q7=======================================
+public static void reverseAnum(int n){
+    if(n==0){
+        return ;
+    }
+    System.out.print(n%10);
+    reverseAnum(n/10);
+    
+}
+//Q8===================================
+public static int coutEven(int digit){
+    if(digit==0){
+        return 0;
+    }
+    if ((digit%2)%2==0){ 
+        return 1+coutEven(digit/10);
+    }
+    else{
+        return coutEven(digit/10);
+    }
+
+}
+//Q9======================================
+public static int printFib(int n){
+    if(n<=1)
+        return n;
+    return printFib(n-1)+printFib(n-2);
+}
+//Q10=====================================
+public static int countDig(int n){
+    if(n==0){
+        return n;
+    }
+    return 1 + (countDig(n/10));
+}
+
+
+
+
