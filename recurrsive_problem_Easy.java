@@ -12,8 +12,8 @@ public static void main(String[] args) {
     // System.out.println(sumDigits(n));
     //reverseAnum(n);
     // System.out.println(coutEven(n));
-    ///System.out.println(printFib(n));
-    System.out.println(countDig(n));
+    //System.out.println(printFib(n));
+    System.out.println(product(n));
 }   
 //Q1============================
 public static int printNum(int a , int b){
@@ -95,6 +95,13 @@ public static int countDig(int n){
         return n;
     }
     return 1 + (countDig(n/10));
+}
+//Q11===================================
+public static int product(int n){
+    if(n==0){
+        return 1;
+    }
+    return n%10 * (product((n/10)));
 }
 
 
