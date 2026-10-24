@@ -16,7 +16,7 @@ public static void main(String[] args) {
     // System.out.println(product(n));
     // System.out.println(reverse(n, 0));
     // System.out.println(is_palin(n));
-    // int arr[] = {2,3,5};
+    int arr[] = {2,3,5,2};
     // // System.out.println(revArr(arr,arr.length-1));
     // System.out.println(minArr(arr, arr.length-1));
     // System.out.println(maxArr(arr, arr.length-1));
@@ -26,8 +26,8 @@ public static void main(String[] args) {
     // System.out.println(powwer(2,5));
     // printnum(3);
     // System.out.println(pro(1234));]
-    int arr[]={1,5,3,8};
-    System.out.println(issorted(arr, 0));
+    //tab(2, 10);
+    System.out.println(ind(arr, 9, 0));
 }   
 
 //Q1============================
@@ -203,5 +203,35 @@ public static boolean issorted(int arr[] , int i){
         return false;
     }
     return issorted(arr, i+1);
+
+}
+//Q18=============================
+public static boolean search(int arr[] , int target , int i){
+    if(i==arr.length){
+        return false;
+    }
+    else if(arr[i]==target){
+        return true;
+    }
+    return search(arr , target , i+1);
+}
+//Q19===================================
+public static void tab(int i ,int j){
+    if(j==0){
+        return ;
+    }
+     tab(i, j-1);
+    System.out.println(i + "x" + j + "=" + i*j);
+}
+//Q20===================================
+public static int ind(int arr[] , int target , int i){
+    if (i==arr.length){
+        return -1;
+        }
+        else if(arr[i]==target){
+            return i;
+        }
+        return ind(arr,target,i+1);
+
 
 }
