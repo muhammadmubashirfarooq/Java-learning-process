@@ -16,7 +16,7 @@ public static void main(String[] args) {
     // System.out.println(product(n));
     // System.out.println(reverse(n, 0));
     // System.out.println(is_palin(n));
-    int arr[] = {2,3,5,2};
+    int arr[] = {2,3,5,10,55};
     // // System.out.println(revArr(arr,arr.length-1));
     // System.out.println(minArr(arr, arr.length-1));
     // System.out.println(maxArr(arr, arr.length-1));
@@ -27,7 +27,7 @@ public static void main(String[] args) {
     // printnum(3);
     // System.out.println(pro(1234));]
     //tab(2, 10);
-    System.out.println(ind(arr, 9, 0));
+    System.out.println(binary(arr, 10, 0, arr.length));
 }   
 
 //Q1============================
@@ -232,6 +232,25 @@ public static int ind(int arr[] , int target , int i){
             return i;
         }
         return ind(arr,target,i+1);
-
+}
+//Q21=================================
+public static int binary(int arr[] , int target , int low , int high){
+    if (low>high) {
+        return -1;
+    }
+    int mids = (low+high)/2;
+    if(arr[mids]==target){
+        return mids;}
+    if(arr[mids]<target){
+        return binary(arr,target,mids+1,high);
+    }    
+    return binary(arr, target, low, mids-1);
+}
+//Q22=================================
+public static String revastr(String str){
+    if(str.length()==0){
+        return  "";
+    }
+      return revastr(str.substring(1)) + str.charAt(0);
 
 }
