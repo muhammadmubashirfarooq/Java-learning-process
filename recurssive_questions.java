@@ -27,7 +27,11 @@ public static void main(String[] args) {
     // printnum(3);
     // System.out.println(pro(1234));]
     //tab(2, 10);
-    System.out.println(binary(arr, 10, 0, arr.length));
+    // System.out.println(binary(arr, 10, 0, arr.length));
+    // System.out.println(linearFunc(10, arr));
+    // System.out.println(linearRec(arr,10,0));
+    System.out.println(binaryRec(arr, 10, 0, arr.length));
+     System.out.println(binaryFunc(arr, 55));
 }   
 
 //Q1============================
@@ -253,4 +257,56 @@ public static String revastr(String str){
     }
       return revastr(str.substring(1)) + str.charAt(0);
 
+}
+//Q23===================================
+public static int linearFunc(int target , int arr[]){
+    for(int i = 0; i<arr.length-1 ; i++){
+        if(arr[i]==target){
+            return i;
+        }
+    }
+    return -1;
+}
+//Q24============================
+public static int linearRec(int arr[] , int target , int i){
+    if(i==arr.length){
+        return -1;
+    }
+    else if(arr[i] == target){
+        return i;
+    }
+    return linearRec(arr, target , i+1);
+}
+//Q25===================================
+public static int binaryRec(int arr[] , int target , int low , int high){
+    if(low>high){
+        return -1;
+    }
+    int mid = (low+high)/2;
+    if(arr[mid]==target){
+        return mid;
+    }
+    if(arr[mid]>target){
+        return binaryRec(arr, target, low, mid-1);
+    }
+    return binaryRec(arr,target,mid+1,high);
+
+    
+}
+//Q26========================================
+public static int binaryFunc(int arr[],int target){
+    int low=0; int high=arr.length-1;
+    while(low<=high){
+        int mid = (low+high) / 2;
+        if(arr[mid]==target){
+            return mid;
+        }
+        if(arr[mid]>target){
+            high=mid-1;
+        }
+        else{
+            low=mid+1;
+        }
+    }
+    return -1;
 }
