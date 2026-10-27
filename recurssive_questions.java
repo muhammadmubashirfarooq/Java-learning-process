@@ -1,4 +1,4 @@
-// import java.util.Scanner;
+public class recurssive_questions{
 public static void main(String[] args) {
     // Scanner input=new Scanner(System.in);
     // System.out.println("Enter  num:");
@@ -309,4 +309,5 @@ public static int binaryFunc(int arr[],int target){
         }
     }
     return -1;
+}
 }
